@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Pradeepa Club Management 2026</title>
+<style>
+body{font-family:Arial;background:#f4f6f9;margin:0}
+header{background:#1e3a8a;color:white;padding:20px;text-align:center}
+.container{padding:20px;max-width:900px;margin:auto}
+.card{background:white;padding:20px;border-radius:12px;margin-bottom:20px}
+button{background:#1e3a8a;color:white;padding:10px 15px;border:none;border-radius:5px}
+input,select{width:100%;padding:10px;margin:8px 0;border:1px solid #ccc;border-radius:5px}
+table{width:100%;border-collapse:collapse}
+th,td{border:1px solid #ddd;padding:10px}
+th{background:#1e3a8a;color:white}
+</style>
+</head>
+<body>
+<header>
+<h1>Pradeepa Club Management Portal 2026</h1>
+<p>S.J. Pradeepa - 21025U18066</p>
+</header>
+<div class="container">
+<div class="card">
+<h2>Join a Club</h2>
+<input id="name" placeholder="Your Name">
+<input id="roll" placeholder="Roll No">
+<select id="club">
+<option>Technical Club</option>
+<option>Cultural Club</option>
+<option>Sports Club</option>
+<option>NSS Club</option>
+</select>
+<button onclick="joinClub()">Join Now</button>
+<p id="msg"></p>
+</div>
+<div class="card">
+<h2>Members List</h2>
+<table id="memberTable">
+<tr><th>Name</th><th>Roll No</th><th>Club</th></tr>
+</table>
+</div>
+<div class="card">
+<h2>Upcoming Events</h2>
+<ul>
+<li>Tech Fest - Nov 10, 2026</li>
+<li>Cultural Day - Nov 15, 2026</li>
+<li>Sports Meet - Nov 20, 2026</li>
+</ul>
+</div>
+</div>
+<script>
+function joinClub(){
+let n=document.getElementById('name').value;
+let r=document.getElementById('roll').value;
+let c=document.getElementById('club').value;
+if(!n||!r){document.getElementById('msg').innerText='Fill all fields';return;}
+let table=document.getElementById('memberTable');
+let row=table.insertRow();
+row.insertCell(0).innerText=n;
+row.insertCell(1).innerText=r;
+row.insertCell(2).innerText=c;
+document.getElementById('msg').innerText='Successfully Joined '+c;
+}
+</script>
+</body>
+</html>
